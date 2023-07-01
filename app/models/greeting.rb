@@ -1,8 +1,4 @@
 class Greeting < ApplicationRecord
-
-	# Validations
-	validates :message, presence: true
-
-
-
+  # Validations
+  validates :message, presence: true
 end
