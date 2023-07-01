@@ -1,17 +1,38 @@
-// Need to use the React-specific entry point to import createApi
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-// Define a service using a base URL and expected endpoints
-export const greetingApi = createApi({
-  reducerPath: 'greetingApi',
-  baseQuery: fetchBaseQuery({ baseUrl: '/api/v1/' }),
-  endpoints: (builder) => ({
-    getGreeting: builder.query({
-      query: () => 'greeting',
-    }),
-  }),
-})
+export const fetchGreeting = createAsyncThunk('greetings/fetchGreeting', async() => {
+  const response = await fetch('http://127.0.0.1:5000/api/v1/greeting');
+  const data = await response.json();
+  return data;  
+});
 
-// Export hooks for usage in functional components, which are
-// auto-generated based on the defined endpoints
-export const { useGetGreetingQuery } =greetingApi
+const initialState = {
+    greeting: '',
+    loading: false,
+    error: null,
+};
+
+const greetingSlice = createSlice({
+    name: 'greeting',
+    initialState,
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+        .addCase(fetchGreeting.pending, (state) => {
+            state.loading = true;
+            state.error = null;
+        })
+        .addCase(fetchGreeting.fulfilled, (state, action) => {
+            state.loading = false;
+            state.greeting = action.payload;
+        })
+        .addCase(fetchGreeting.rejected, (state, action) => {
+            state.loading = false;
+            state.error = action.error.message;
+        });
+    },
+});
+
+export const selectGreeting = (state) => state.greeting.greeting.message;
+
+export default greetingSlice.reducer;

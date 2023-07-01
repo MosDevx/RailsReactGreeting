@@ -1,29 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import axios from "axios";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchGreeting, selectGreeting } from '../redux/greetingSlice';
 
-import { useGetGreetingQuery } from './greetingSlice.js';
+const Greeting = () => {
+    const greeting = useSelector(selectGreeting);
+    const dispatch = useDispatch();
 
-function Greeting() {
-  const [data, setData] = useState("hey");
+    useEffect(() => {
+        dispatch(fetchGreeting());
+    }, [dispatch]);
 
-	const { data: greeting, error, isLoading } = useGetGreetingQuery();
-
-
-
-		if (isLoading) return <div>Loading...</div>
-		if (error) return <div>{error}</div>
-
-		return (
-			<div style={{ backgroundColor: 'lightblue', padding: '10px', fontSize: '16px' }}>
-				Random Greeting: {greeting.message}
-			</div>
-		);
-				
-}
+    return (
+        <div>
+            <p>Greeting Here:</p>
+            <h2>{greeting}</h2>
+        </div>
+    );
+};
 
 export default Greeting;
