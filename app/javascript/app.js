@@ -5,7 +5,6 @@ import {
 	Routes,
 	Route
 } from "react-router-dom";
-import "./index.css";
 
 import Greeting from "./Greeting.js";
 
