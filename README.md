@@ -18,9 +18,9 @@
 - [📝 License](#license)
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [MyEnumerable] <a name="about-project"></a>
+# 📖 [Greeting App] <a name="about-project"></a>
 
-> **MyEnumerable** is a project that is built to decode Morse code.
+> **Greetings App ** is a project that is built to display a random greeting.
 
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -30,7 +30,14 @@
 <details>
 <summary>Server</summary>
   <ul>
-    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li><a href="https://www.ruby-lang.org/en/">Ruby On Railss</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>FrontEnd</summary>
+  <ul>
+    <li><a href="https://www.ruby-lang.org/en/">React</a></li>
   </ul>
 </details>
 
@@ -104,11 +111,7 @@ Thats it now you can execute your program on termonal:)
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Ayesha Arshad**
 
-- GitHub: [@shella12](https://github.com/shella12)
-- Twitter: [@Ayesha Arshad](https://twitter.com/AyeshaA03712974)
-- LinkedIn: [Ayesha Arshad](https://www.linkedin.com/in/ayesha-arshad-a690a015a/)
 
 👤 **Moses Wamae**
 
@@ -144,6 +147,6 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
