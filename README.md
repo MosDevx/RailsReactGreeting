@@ -135,7 +135,7 @@ Thats it now you can execute your program on termonal:)
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/MosDevx/RailsReactGreeting/issues).
 
 ## ⭐️ Show your support <a name="support"></a>
 
